@@ -1,0 +1,29 @@
+
+def grasshopper(t:int ,x_n:str)->list:
+    x_list=list()
+    while t:
+        x, n = map(int,x_n)
+#the grasshopper return to beginning  after 4 jump so :
+        for i in range(n-(n%4)+1, n+1):
+
+            if not x%2:
+                x-=i
+            else:
+                x+=i
+        x_list.append(x)
+        t-=1
+    for item in x_list:
+        print(item)
+
+if __name__=='__main__':
+    t = int(input('enter t :'))                  # number of grasshpper 
+    x_n=input('enter x and n number').split(' ')  #number of jumping and Coordinates beginnig
+    grasshopper(t,x_n)
+
+
+
+
+    
+    
+
+
